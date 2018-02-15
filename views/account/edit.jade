@@ -1,0 +1,29 @@
+html
+	head
+		title List
+
+	link(href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', rel='stylesheet')
+	body
+
+		h3 Employee Info
+		br
+		div(class="container")
+			div(class="row")
+				form(method="post", action="/account/edit", enctype="application/json")
+					table(class="table table-striped table-condensed")
+						tr
+							th Name
+							td
+								input(type="text", name="name", value=account.name)
+						tr
+							th Age
+							td
+								input(type="text", name="age", value=account.age)
+						tr
+							th Email
+							td
+								input(type="text", name="email", value=account.email)
+						tr
+							
+							td
+								input(type="submit", value="Save")

@@ -1,0 +1,27 @@
+html
+	head
+		title List
+
+	link(href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', rel='stylesheet')
+	body
+		h3 Employee List
+		div(class="container")
+			div(class="row")
+				br
+				a(href="/account/add", class="btn btn-info") Add
+				br
+				table(border="1",class="table table-striped table-condensed")
+					tr
+						th Name
+						th Age
+						th Email
+						th Actions
+					each account in accounts
+						tr
+							td #{account.name}
+							td #{account.age}
+							td #{account.email}
+							td
+								a(href='/account/edit/' + account.name, class="btn btn-info") Edit 
+								| 
+								a(href='/account/delete/' + account.name, onclick="return confirm('Are you sure?')", class="btn btn-info") Delete
